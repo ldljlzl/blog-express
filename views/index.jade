@@ -1,0 +1,50 @@
+doctype html
+html
+    head
+        title 我的博客
+        meta(http-equiv='Content-type',content="text/html;charset=utf-8")
+        link(type="text/css",rel="stylesheet",href="/public/style/index.css")     
+        script(type="text/javascript",src="/public/js/jquery.js")
+    body
+        -if(username)
+            div
+                p 欢迎#{username}来到我的博客
+            div
+                button#clearCookies 退出
+        -else
+            div#haha
+                h1 刘泽霖
+                p 你好，么么哒 
+                div#admin
+                    button#toAdmin 以管理员身份登录
+                div#register
+                    button#toSignin 去登录
+                    | 已有账号，点击登录
+                    br
+                    br
+                    br
+                    input.account(type='text',placeholder='account')   
+                    br
+                    input.password(type='password',placeholder='password')
+                    br
+                    button#register 注册
+                    | 点这里注册
+                    br
+                div#signin
+                    button#toRegister 去注册
+                    | 没有账号，点击前去注册
+                    br
+                    br
+                    br
+                    input.account(type='text',placeholder='account')   
+                    br
+                    input.password(type='password',placeholder='password')
+                    br
+                    button#signin 登录
+                    | 点这里登录
+                    br
+                div#user
+                    div#span 
+                img(src='/public/img/桃谷绘里香.jpg' alt='桃谷绘里香')
+        script(type="text/javascript",src="/public/js/index.js")
+            

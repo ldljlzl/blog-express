@@ -1,0 +1,19 @@
+body{
+    padding-left: 5%;
+    padding-top: 1%
+}
+ul.pagination{
+    position:relative;
+    left:1%
+}
+div.back{
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 5%
+}
+img{
+    height: 16px;   
+}
+img:hover{
+    cursor:pointer
+}

@@ -1,0 +1,14 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+div#user{
+    display: none
+}
+div#register{
+    display: none
+}
+div#signin{
+    display:inline
+}
