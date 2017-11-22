@@ -6,6 +6,7 @@ html
         link(href="/public/style/bootstrap.min.css",rel="stylesheet")
         link(href="/public/style/admin/users.css",rel="stylesheet")
         script(type="text/javascript",src="/public/js/jquery.js")
+        script(type="text/javascript",src="/public/js/bootstrap.min.js")
     body
         div(class="page-header")
                 h1 后台管理页面
@@ -35,13 +36,29 @@ html
                     th            
                 each item in users_show
                     tr
-                        td(class='editAllow')= item.account
-                        td(class='editAllow')= item.password
-                        td(class='editAllow')= item.isAdmin.toString()
-                        td 
-                            img(src='/public/img/edit.png' alt='edit' class='edit')
+                        td(class='text')=item.account
+                        td(class='textEdit')
+                            input(value=item.account) 
+                        td(class='text')=item.password
+                        td(class='textEdit')
+                            input(value=item.password) 
+                        td(class='text')=item.isAdmin.toString()
+                        td(class='textEdit')
+                            div(class='isAdminText' style="display:inline")= item.isAdmin.toString()
+                            div(class='btn-group')
+                                button(class="btn btn-default btn-xs dropdown-toggle btnDropMenu" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
+                                    span.caret
+                                ul.dropdown-menu
+                                    li  
+                                        a(class='dropMenu')=item.isAdmin.toString()
+                                    li
+                                        a(class='dropMenu')=(!item.isAdmin).toString()
+                        td(class='text')
+                            img(src='/public/img/edit.png' alt='edit' title='编辑' class='edit')
                             | 
-                            img(src='/public/img/delete.png' alt='delete' class='delete')
+                            img(src='/public/img/delete.png' title='删除' alt='delete' class='delete')
+                        td(class='textEdit')
+                            img(src='/public/img/save.png' alt='save' title='保存' class='save' )  
             //- 显示页码
             nav(aria-label="Page navigation")
                 ul(class="pagination")
