@@ -37,13 +37,13 @@ html
                 each item in users_show
                     tr
                         td(class='text')=item.account
-                        td(class='textEdit')
+                        td(class='textEdit account')
                             input(value=item.account) 
                         td(class='text')=item.password
-                        td(class='textEdit')
+                        td(class='textEdit password')
                             input(value=item.password) 
                         td(class='text')=item.isAdmin.toString()
-                        td(class='textEdit')
+                        td(class='textEdit isAdmin')
                             div(class='isAdminText' style="display:inline")= item.isAdmin.toString()
                             div(class='btn-group')
                                 button(class="btn btn-default btn-xs dropdown-toggle btnDropMenu" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
