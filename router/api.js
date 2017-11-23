@@ -61,7 +61,7 @@ router.post('/signin',function(req,res,next){
 router.get('/clearCookies',function(req,res){
     res.clearCookie('userinfo')
     res.send('退出用户成功')
-    
+    return
 })
 
 

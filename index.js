@@ -19,7 +19,7 @@ app.use(cookieParser())
 app.use('/',require('./router/index'))
 app.use('/api',require('./router/api'))
 app.use('/admin',require('./router/admin'))
-
+app.use('/admin/users',require('./router/admin/users'))
 
 mongoose.connect('mongodb://localhost:28017/blog',function(err){
     if(err){
