@@ -31,3 +31,11 @@ div.addUser div.btn-group{
     height: 110%;
 }
 
+div.addUser div.alert{
+    position: relative;
+    top:7px;
+    padding: 8px;
+    margin-left: 5px;
+    display: none; 
+}
+

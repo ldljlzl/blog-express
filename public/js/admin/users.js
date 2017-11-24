@@ -33,5 +33,25 @@ $(function(){
             location.reload()
         })
     })
-    $('')
+
+    //添加新用户，检查该账户是否被注册
+    //status=0 查找数据库失败；status=1 该用户名没被注册 ；status=2该用户名已被注册
+    $('div.addUser input.account').keydown(function(){
+        _this=this
+        let interval=setInterval(function(){
+            
+            $.post('/admin/users/checkAccount',{account:$(_this).val()},function(data){
+                if(data.status==2){
+                    $(_this).siblings('div.alert')[0].style.display='inline'
+                    $(_this).siblings('div.alert').children('span').text(data.msg)
+                }
+                else{
+                    $(_this).siblings('div.alert')[0].style.display='none'
+                }  
+            })
+            clearInterval(interval)
+        },500)
+
+        
+    })
 })

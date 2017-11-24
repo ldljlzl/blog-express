@@ -26,6 +26,26 @@ router.get('/', function(req, res,next) {
     
 })
 
+router.post('/checkAccount',function(req,res){
+    let account=req.body.account
+    _res=res
+    User.findOne({account:account},function(err,res){
+        if(err){
+            console.log('err:'+err)
+            _res.send({status:0,msg:''})
+            return
+        }else{
+            if(!res){
+                _res.send({status:1,msg:''})
+                return
+            }
+            else{
+                _res.send({status:2,msg:'该用户名已被注册'})
+                return
+            }
+        }
+    })
+})
 
 router.post('/delete',function(req,res){
     let account=req.body.account
