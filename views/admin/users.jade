@@ -36,7 +36,7 @@ html
                     th            
                 each item in users_show
                     tr
-                        td(class='text')=item.account
+                        td(class='text accountShow')=item.account
                         td(class='textEdit account')
                             input(value=item.account) 
                         td(class='text')=item.password
@@ -76,6 +76,28 @@ html
                             a(href="?page="+next aria-label="Next")
                                 span(aria-hidden="true")&raquo;   
             div.back
-                a 
-                    | 返回后台管理首页                                                 
+                a(href='/') 
+                    | 返回首页 
+        div(class='panel panel-default addUser')  
+            div.panel-heading 添加用户
+            div.panel-body
+                div(class='input-group')  
+                    span.input-group-addon  账号 
+                    input(type="text" class="form-control lzl" placeholder="Username" aria-describedby="basic-addon1" ) 
+                div(class='input-group') 
+                    span.input-group-addon  密码
+                    input(type="text" class="form-control lzl" placeholder="password" aria-describedby="basic-addon1")    
+                div(class='input-group')
+                    span.input-group-addon  是否是管理员
+                    div(style="display:inline")  
+                    | &nbsp&nbsp&nbsp
+                    div(class='isAdminText' style="display:inline") false
+                    div(class='btn-group')
+                        button(class="btn btn-default btn-xs dropdown-toggle btnDropMenu" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
+                            span.caret
+                        ul.dropdown-menu
+                            li  
+                                a(class='dropMenu') false
+                            li
+                                a(class='dropMenu') true   
         script(type="text/javascript",src="/public/js/admin/users.js")

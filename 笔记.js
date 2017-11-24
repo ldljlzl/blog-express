@@ -62,12 +62,22 @@
 7.cookies和session，分别用cookie-parser和express-session
 
 
-8.
+8.最好全用jquery操作
 $("img.edit").click(function(e){
     $(this).parent().prev()[0].style.color='red'
 })
 // 1.$(this)  指代点击的元素
-
 // 2.$(this).parent()或者prev()等等，要加[0]，否则显示Cannot set property 'color' of undefined
-
 // 3.e 代表event事件本身
+// 4. 最好改用 $(this).parent().prev('.....').css({"color":"red","fontSize":"30px"})
+
+9.三种对话框
+//1.alert
+//2.confirm('.....')  是否对话框
+//3.let text=prompt('输入账号','placeholder....')
+
+
+10.样式表优先级
+//1.内联>嵌入式>外部
+//2.内联样式表的权值最高 1000；ID 选择器的权值为 100;Class 类选择器的权值为 10;HTML 标签选择器的权值为1。如 .a .b .c{}  的权值为30
+//3.内联样式  div(style='width:50%')

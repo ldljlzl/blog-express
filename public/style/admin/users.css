@@ -2,6 +2,9 @@ body{
     padding-left: 5%;
     padding-top: 1%
 }
+body>div{
+    margin-right: 5%
+}
 ul.pagination{
     position:relative;
     left:1%
@@ -17,3 +20,14 @@ img{
 img:hover{
     cursor:pointer
 }
+
+div.input-group{
+    margin-bottom: 1%
+}
+div.addUser input.form-control{
+    width: 20%
+}
+div.addUser div.btn-group{
+    height: 110%;
+}
+
