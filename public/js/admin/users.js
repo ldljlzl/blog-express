@@ -50,8 +50,31 @@ $(function(){
                 }  
             })
             clearInterval(interval)
-        },500)
-
-        
+        },500)    
+    })
+    $('div.addUser button.addUserBtn').click(function(){
+        _this=this
+        let account=$(_this).parent().siblings('div.input-group').children('input.account').val()
+        let password=$(_this).parent().siblings('div.input-group').children('input.password').val()
+        let isAdmin=$(_this).parent().siblings('div.input-group').children('div.isAdminText').text()
+        $.post('/admin/users/checkAccount',{
+            account:account,
+        },function(data){
+            if(data.status==0){
+                alert('链接数据库失败')
+            }
+            else if(data.status==2){
+                alert('该用户名已被注册')
+            }
+            else if(data.status==1){
+                $.post('/admin/users/addUser',{
+                    account:account,
+                    password:password,
+                    isAdmin:isAdmin
+                },function(data){
+                    
+                })
+            }
+        })
     })
 })

@@ -26,6 +26,39 @@ router.get('/', function(req, res,next) {
     
 })
 
+router.post('/addUser',function(req,res){
+    let account=req.body.account
+    let password=req.body.password
+    let isAdmin=req.body.isAdmin
+    
+    _res=res
+    let user=new User({
+        account:account,
+        password:password,
+        isAdmin:isAdmin
+    })
+    https://www.zhihu.com/question/31442029
+    http://blog.csdn.net/wuyou1336/article/details/71076351
+    http://blog.csdn.net/wmaoshu/article/details/69676896
+    User.findOne({account:account},function(err,res){
+        if(err){
+            console.log('err:'+err)
+            _res.send({status:0,msg:''})
+            return
+        }else{
+            if(!res){
+                _res.send({status:1,msg:''})
+                return
+            }
+            else{
+                _res.send({status:2,msg:'该用户名已被注册'})
+                return
+            }
+        }
+    })
+})
+
+
 router.post('/checkAccount',function(req,res){
     let account=req.body.account
     _res=res
