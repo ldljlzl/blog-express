@@ -29,7 +29,7 @@ router.get('/', function(req, res,next) {
 router.post('/addUser',function(req,res){
     let account=req.body.account
     let password=req.body.password
-    let isAdmin=req.body.isAdmin
+    let isAdmin=(req.body.isAdmin==='false'?false:true)
     
     _res=res
     let user=new User({
@@ -37,25 +37,18 @@ router.post('/addUser',function(req,res){
         password:password,
         isAdmin:isAdmin
     })
-    https://www.zhihu.com/question/31442029
-    http://blog.csdn.net/wuyou1336/article/details/71076351
-    http://blog.csdn.net/wmaoshu/article/details/69676896
-    User.findOne({account:account},function(err,res){
+    user.save(function(err,res){
         if(err){
             console.log('err:'+err)
-            _res.send({status:0,msg:''})
+            _res.send({status:0,msg:'连接数据库失败'})
             return
         }else{
-            if(!res){
-                _res.send({status:1,msg:''})
-                return
-            }
-            else{
-                _res.send({status:2,msg:'该用户名已被注册'})
-                return
-            }
+            console.log("res:" + res)
+            _res.send({status:1,msg:'存入数据成功'})
+            return
         }
     })
+
 })
 
 

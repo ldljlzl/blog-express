@@ -81,3 +81,7 @@ $("img.edit").click(function(e){
 //1.内联>嵌入式>外部
 //2.内联样式表的权值最高 1000；ID 选择器的权值为 100;Class 类选择器的权值为 10;HTML 标签选择器的权值为1。如 .a .b .c{}  的权值为30
 //3.内联样式  div(style='width:50%')
+
+
+11.==与===的区别
+https://www.zhihu.com/question/31442029

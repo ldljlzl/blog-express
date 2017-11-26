@@ -34,7 +34,7 @@ $(function(){
         })
     })
 
-    //添加新用户，检查该账户是否被注册
+    //检查该账户是否被注册
     //status=0 查找数据库失败；status=1 该用户名没被注册 ；status=2该用户名已被注册
     $('div.addUser input.account').keydown(function(){
         _this=this
@@ -52,14 +52,19 @@ $(function(){
             clearInterval(interval)
         },500)    
     })
+
+
+
+
     $('div.addUser button.addUserBtn').click(function(){
-        _this=this
-        let account=$(_this).parent().siblings('div.input-group').children('input.account').val()
-        let password=$(_this).parent().siblings('div.input-group').children('input.password').val()
-        let isAdmin=$(_this).parent().siblings('div.input-group').children('div.isAdminText').text()
+        let account=$(this).parent().siblings('div.input-group').children('input.account').val()
+        let password=$(this).parent().siblings('div.input-group').children('input.password').val()
+        let isAdmin=$(this).parent().siblings('div.input-group').children('div.isAdminText').text()
         $.post('/admin/users/checkAccount',{
             account:account,
         },function(data){
+            //检查该账户是否被注册
+            //status=0 查找数据库失败；status=1 该用户名没被注册 ；status=2该用户名已被注册
             if(data.status==0){
                 alert('链接数据库失败')
             }
@@ -72,8 +77,18 @@ $(function(){
                     password:password,
                     isAdmin:isAdmin
                 },function(data){
-                    
+                    //添加新用户
+                    //status=0 查找数据库失败；status=1 添加用户成功 
+                    if(data.status){
+                        alert(data.msg)
+                    }
+                    else{
+                        alert('添加新用户失败')
+                    }
+                    location.reload()
                 })
+            }else{
+                alert('未知错误，添加用户失败')
             }
         })
     })
