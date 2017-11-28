@@ -20,6 +20,8 @@ app.use('/',require('./router/index'))
 app.use('/api',require('./router/api'))
 app.use('/admin',require('./router/admin'))
 app.use('/admin/users',require('./router/admin/users'))
+app.use('/admin/article',require('./router/admin/article'))
+
 
 mongoose.connect('mongodb://localhost:28017/blog',function(err){
     if(err){

@@ -1,0 +1,43 @@
+/*和user.css一样的部分*/
+body{
+    padding-left: 5%;
+    padding-top: 1%
+}
+body>div{
+    margin-right: 5%
+}
+div.back{
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 5%
+}
+div.back a{
+    margin-bottom: 2%
+}
+
+img{
+    height: 16px;   
+}
+img:hover{
+    cursor:pointer
+}
+
+/*独立部分*/
+div.panel{
+    padding: 2%
+}
+div.page-header{
+    font-size: 200%;
+    font-weight: bold
+}
+div.form-group input{
+    width: 25%
+}
+div.panel textarea{
+    width: 70%
+}
+
+
+
+
+

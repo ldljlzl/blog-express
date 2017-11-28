@@ -44,14 +44,14 @@ router.post('/addUser',function(req,res){
             return
         }else{
             console.log("res:" + res)
-            _res.send({status:1,msg:'存入数据成功'})
+            _res.send({status:1,msg:'存入用户数据成功'})
             return
         }
     })
 
 })
 
-
+//检查账户是否被注册
 router.post('/checkAccount',function(req,res){
     let account=req.body.account
     _res=res
@@ -92,12 +92,8 @@ router.post('/save',function(req,res){
     let oldAccount=req.body.oldAccount
     let account=req.body.account
     let password=req.body.password
-    let isAdmin
-    if(req.body.isAdmin=='true'){
-        isAdmin=true
-    }else{
-        isAdmin=false
-    }
+    let isAdmin=(req.body.isAdmin==='false'?false:true)
+
     let _res=res
 
     User.findOne({account:account},function(err,res){

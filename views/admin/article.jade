@@ -1,0 +1,81 @@
+doctype html
+html
+    head
+        title 后台管理页面
+        meta(http-equiv='Content-type',content="text/html;charset=utf-8")  
+        link(href="/public/style/bootstrap.min.css",rel="stylesheet")
+        link(href="/public/style/admin/article.css",rel="stylesheet")
+        script(type="text/javascript",src="/public/js/jquery.js")
+        script(type="text/javascript",src="/public/js/bootstrap.min.js")
+    body
+        div(class="page-header")
+                h1 后台管理页面
+                    small 管理分类、文章、评论、用户等等
+            nav(class="navbar navbar-default")
+                div(class="container-fluid")
+                    div(class="collapse navbar-collapse" id="bs-example-navbar-collapse-1")
+                        ul(class="nav navbar-nav")
+                            li
+                                a(href="/admin/category") 分类管理
+                            li(class="active")
+                                a(href="/admin/article") 文章管理
+                            li
+                                a(href="/admin/users") 用户管理   
+        div(class="panel panel-default")
+            div(class="panel-body")
+                p 这里可以查看、编辑文章
+            //-显示文章列表   
+            - let page_article_num=10
+            - let page_num=Math.ceil(articles.length/page_article_num) 
+            - let articles_show=articles.slice((page_index-1)*page_article_num,page_index*page_article_num)
+            table(class="table")
+                tr 
+                    th 文章名称
+                    th 作者
+                    th
+                    th 发表日期 
+                    th          
+                each item in articles_show
+                    tr
+                        td=item.title
+                        td=item.author
+                        td
+                        td=item.date
+                        td
+                            img(src='/public/img/edit.png' alt='edit' title='编辑' class='edit')
+                            | 
+                            img(src='/public/img/delete.png' title='删除' alt='delete' class='delete')
+            //- 显示页码
+            nav(aria-label="Page navigation")
+                ul(class="pagination")
+                    -let pre=(parseInt(page_index)-1).toString()
+                    -let next=(parseInt(page_index)+1).toString()
+                    - if(page_index>1)  
+                        li
+                            a(href="?page="+pre aria-label="Previous")
+                                span(aria-hidden="true")&laquo; 
+                    - for (let i=1;i<=page_num;i++)              
+                        li
+                            a(href="/admin/article/?page="+i)= i
+                    - if(page_index<page_num)        
+                        li
+                            a(href="?page="+next aria-label="Next")
+                                span(aria-hidden="true")&raquo;   
+            div.back
+                a(class='btn btn-default' href='/') 
+                    | 返回首页 
+        div(class="panel panel-default")
+            div.page-header 添加新文章
+            div(class="panel-body")
+                form
+                    div(class="form-group")
+                        label 文章标题
+                        input(class="form-control titleArticle" placeholder='文章标题')
+                    div(class="form-group")
+                        label 作者
+                        input(class="form-control authorArticle" placeholder='作者')
+                    div(class="form-group")
+                        label 内容
+                        textarea(rows="10" class="form-control contentArticle" placeholder='内容') 
+                    button(type='submit' class='btn btn-info addArticle') 提交文章
+        script(type="text/javascript",src="/public/js/admin/article.js")
