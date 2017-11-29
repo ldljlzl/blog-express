@@ -21,7 +21,7 @@ app.use('/api',require('./router/api'))
 app.use('/admin',require('./router/admin'))
 app.use('/admin/users',require('./router/admin/users'))
 app.use('/admin/article',require('./router/admin/article'))
-
+app.use('/admin/category',require('./router/admin/category'))
 
 mongoose.connect('mongodb://localhost:28017/blog',function(err){
     if(err){

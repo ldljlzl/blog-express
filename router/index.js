@@ -4,10 +4,10 @@ let router=express.Router()
 
 router.get('/', function(req, res,next) {
     if(req.cookies.userinfo){
-        res.render('index',{username:req.cookies.userinfo.username})
+        res.render('index1',{username:req.cookies.userinfo.username})
     }
     else{
-        res.render('index')
+        res.render('index1')
     }
     next()
 })

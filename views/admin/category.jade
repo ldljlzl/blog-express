@@ -1,0 +1,36 @@
+doctype html
+html
+    head
+        title 后台管理页面
+        meta(http-equiv='Content-type',content="text/html;charset=utf-8")  
+        link(href="/public/style/bootstrap.min.css",rel="stylesheet")
+        link(href="/public/style/admin/category.css",rel="stylesheet")
+    body
+        div(class="page-header")
+            h1 后台管理页面
+                small 管理分类、文章、评论、用户等等
+        nav(class="navbar navbar-default")
+            div(class="container-fluid")
+                div(class="collapse navbar-collapse" id="bs-example-navbar-collapse-1")
+                    ul(class="nav navbar-nav")
+                        li(class="active")
+                            a(href="/admin/category") 分类管理
+                        li 
+                            a(href="/admin/article") 文章管理
+                        li 
+                            a(href="/admin/users") 用户管理
+        div(class='panel panel-primary head')
+            ul(class="nav nav-tabs")
+                - for(let i=0;i<category.length;i++)
+                    li(role="presentation")
+                        a(href="#" class='head')=category[i].nameCategory
+
+        div(class='panel panel-primary addCategory')   
+            div.panel-heading 添加新的文章类别
+            div.panel-body
+                input(type="text" class="form-control addCategory" placeholder="分类名称")  
+                button(type="button" class="btn btn-default addCategory") 添加分类             
+
+        script(type="text/javascript",src="/public/js/jquery.js")
+        script(type="text/javascript",src="/public/js/bootstrap.min.js")
+        script(type="text/javascript",src="/public/js/admin/category.js")

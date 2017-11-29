@@ -1,0 +1,11 @@
+body{
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 1%
+}
+input.addCategory{
+    width: 30%
+}
+button.addCategory{
+    margin-top: 1%
+}

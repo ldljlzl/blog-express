@@ -8,7 +8,6 @@ const Article=require(path.join(process.cwd(),'/model/article'))
 let router=express.Router()
 
 router.get('/',function(req,res,next){
-
     _res=res
     Article.find(function(err,res){
         if(err){
@@ -21,9 +20,6 @@ router.get('/',function(req,res,next){
             {
                 req.query.page=1
             }
-            console.log('111111111111111111111111111111')
-            console.log(res)
-            console.log('111111111111111111111111111111')
             _res.render('admin/article',{articles:res,page_index:req.query.page})
             return
         }

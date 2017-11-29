@@ -11,12 +11,4 @@ router.get('/', function(req, res,next) {
 
 
 
-router.get('/category', function(req, res,next) {
-    
-    // _res=res
-    // User.find(function(err,res){
-    //     _res.render('admin/users',{users:res,page_index:req.query.page})
-    // })
-})
-
 module.exports=router
