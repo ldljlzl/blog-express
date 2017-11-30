@@ -85,3 +85,17 @@ $("img.edit").click(function(e){
 
 11.==与===的区别
 https://www.zhihu.com/question/31442029
+
+12.js是异步的
+    let myCategory=[]
+    Category.find(function(err,res){
+        if(err){
+            console.log('分类查找数据库失败')
+            _res.send('分类查找数据库失败')
+            return
+        }else{
+            myCategory=res
+        }
+    })
+    console.log(myCategory) // undefined
+    //因为js是异步的，数据库的值还没有传给myCategory

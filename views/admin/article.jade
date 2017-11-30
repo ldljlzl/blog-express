@@ -37,13 +37,11 @@ html
                     th          
                 each item in articles_show
                     tr
-                        td=item.title
-                        td=item.author
+                        td.title=item.title
+                        td.author=item.author
                         td
-                        td=item.date
+                        td.date=item.date
                         td
-                            img(src='/public/img/edit.png' alt='edit' title='编辑' class='edit')
-                            | 
                             img(src='/public/img/delete.png' title='删除' alt='delete' class='delete')
             //- 显示页码
             nav(aria-label="Page navigation")
@@ -74,6 +72,17 @@ html
                     div(class="form-group")
                         label 作者
                         input(class="form-control authorArticle" placeholder='作者')
+                    div(class="form-group")
+                        label 选择分类&nbsp
+                        div(class='btn-group')
+                            button(type="button" class="btn btn-info dropdown-toggle category" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
+                                |分类
+                                span.caret
+                            ul.dropdown-menu
+                                - for(let i=0;i<category.length;i++)
+                                    li
+                                        a.category=category[i].nameCategory
+
                     div(class="form-group")
                         label 内容
                         textarea(rows="10" class="form-control contentArticle" placeholder='内容') 

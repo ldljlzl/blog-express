@@ -15,7 +15,8 @@ html
         div(class='head')
             div(class='navigation')
                 div(class='navigationChildren') 首页
-                div(class='navigationChildren') 分类1
+                - for(let i=0;i<category.length;i++)
+                    div(class='navigationChildren')=category[i].nameCategory
         script(type="text/javascript",src="/public/js/index1.js")
         script(type="text/javascript",src="/public/js/jquery.js")
         script(type="text/javascript",src="/public/js/bootstrap.min.js")

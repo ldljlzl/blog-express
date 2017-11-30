@@ -10,11 +10,12 @@ $(function(){
             }
         })
     })
+    
+
 
     //默认展示第一个分类文章列表 
-    // $("div.head li")[0].addClass("active")
     $("div.head li:first").addClass("active")
-    // alert(JSON.stringify($("div.head li")))
+
     //点击某个分类，就展示该分类的文章列表
     $("a.head").click(function(){
         $("div.head li").attr('class','')

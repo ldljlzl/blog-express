@@ -3,16 +3,26 @@ const path=require('path')
 const process=require('process')
 const User=require(path.join(process.cwd(),'/model/user'))
 const Article=require(path.join(process.cwd(),'/model/article'))
-
+const Category=require(path.join(process.cwd(),'/model/category'))
 
 let router=express.Router()
 
 router.get('/',function(req,res,next){
     _res=res
+    let category
+    Category.find(function(err,res){
+        if(err){
+            console.log('分类查找数据库失败')
+            _res.send('分类查找数据库失败')
+            return
+        }else{
+            category=res
+        }
+    })
     Article.find(function(err,res){
         if(err){
-            console.log('查找数据库失败')
-            _res.send('查找数据库失败')
+            console.log('文章查找数据库失败')
+            _res.send('文章查找数据库失败')
             return
         }
         else{
@@ -20,7 +30,11 @@ router.get('/',function(req,res,next){
             {
                 req.query.page=1
             }
-            _res.render('admin/article',{articles:res,page_index:req.query.page})
+            _res.render('admin/article',{
+                articles:res,
+                page_index:req.query.page,
+                category:category
+            })
             return
         }
         
@@ -63,6 +77,21 @@ router.post('/addArticle',function(req,res){
                 })
             }
             console.log('到了这个return  1111111111111111111')
+            return
+        }
+    })
+})
+
+router.post('/delete',function(req,res){
+    let title=req.body.title
+    _res=res
+    Article.remove({title:title},function(err,res){
+        if(err){
+            console.log('err:'+err)
+            _res.send('查找数据库失败')
+            return
+        }else{
+            _res.send('成功删除该文章')
             return
         }
     })

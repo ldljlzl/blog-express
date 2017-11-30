@@ -16,4 +16,17 @@ $(function(){
             }
         })
     })
+    $("a.category").click(function(){
+        let category=$(this).text()
+        $("div.btn-group button.category").text(category)
+    })
+    $("img.delete").click(function(){
+        if(confirm('是否要从数据库中删除该文章？')){
+            let title=$(this).parent().siblings('td.title').text()
+            $.post('/admin/article/delete',{title},function(data){
+                alert(data)
+                location.reload()
+            })
+        }
+    })
 })
