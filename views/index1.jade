@@ -4,20 +4,58 @@ html
         title 我的博客
         meta(http-equiv='Content-type',content="text/html;charset=utf-8")
         link(type="text/css",rel="stylesheet",href="/public/style/index1.css")  
-        link(href="/public/style/bootstrap.min.css",rel="stylesheet")          
-    body
-        div(class='top')
-            img(src='/public/img/backgroundPic.png')
-            //- img(src='/public/img/桃谷绘里香1.jpg' alt='桃谷绘里香1')
-            //- img(src='/public/img/桃谷绘里香2.jpg' alt='桃谷绘里香2')
-            //- img(src='/public/img/桃谷绘里香3.jpg' alt='桃谷绘里香3')
-            //- img(src='/public/img/桃谷绘里香4.jpg' alt='桃谷绘里香4')
-        div(class='head')
-            div(class='navigation')
-                div(class='navigationChildren') 首页
-                - for(let i=0;i<category.length;i++)
-                    div(class='navigationChildren')=category[i].nameCategory
-        script(type="text/javascript",src="/public/js/index1.js")
+        link(href="/public/style/bootstrap.min.css",rel="stylesheet")  
         script(type="text/javascript",src="/public/js/jquery.js")
-        script(type="text/javascript",src="/public/js/bootstrap.min.js")
+        script(type="text/javascript",src="/public/js/bootstrap.min.js")        
+    body
+        div
+            div(class='top')
+                img(src='/public/img/backgroundPic.png')
+                //- img(src='/public/img/桃谷绘里香1.jpg' alt='桃谷绘里香1')
+                //- img(src='/public/img/桃谷绘里香2.jpg' alt='桃谷绘里香2')
+                //- img(src='/public/img/桃谷绘里香3.jpg' alt='桃谷绘里香3')
+                //- img(src='/public/img/桃谷绘里香4.jpg' alt='桃谷绘里香4')
+            div(class='head')
+                div(class='navigation')
+                    ul(class='nav nav-tabs nav-justified')
+                        li(role="presentation" class='active') 
+                            a 首页
+                        - let category=[{nameCategory:'javascript'},{nameCategory:'vue'},{nameCategory:'nodejs'}]
+                        -let article=[{title:'第一篇文字',author:'lzl123',date: new Date(),content:'lalalal'},{title:'第2篇文字',author:'lzl123',date: new Date(),content:'lalalal'},{title:'第3篇文字',author:'lzl123',date: new Date(),content:'lalalal'}]
+                        - for(let i=0;i<category.length;i++)    
+                            li(role="presentation") 
+                                a=category[i].nameCategory
+            div.body
+                div.leftPanel
+                    -for(let i=0;i<article.length;i++)  
+                        div(class='left articleDiv')
+                            div(class='titleArticle')
+                                h1=article[i].title
+                            div(class='infoArticle')
+                                span.author 作者:&nbsp
+                                    a #{article[i].author}
+                                    | &nbsp&nbsp&nbsp
+                                span.date 发布时间:&nbsp#{article[i].date.getFullYear()}.#{article[i].date.getMonth()}.#{article[i].date.getDate()}&nbsp
+                            div(class='bodyArticle')=article[i].content
+
+                div.rightPanel
+                    div(class='right signin')
+                        div
+                            div.page-header
+                                div
+                                    h3 登录
+                            div(class='input-group account')
+                                span(class="input-group-addon" id="basic-addon1") 账号
+                                input(type="text" class="form-control" placeholder="账号" aria-describedby="basic-addon1")
+                            div(class='input-group password')
+                                span(class="input-group-addon" id="basic-addon1") 密码
+                                input(type="text" class="form-control" placeholder="密码" aria-describedby="basic-addon1")
+                            div.button
+                                button.signin 登录
+                            div.toRegister
+                                | 还没注册?
+                                a 马上注册
+                    div.right llalalala
+        script(type="text/javascript",src="/public/js/index1.js")
+        
             
