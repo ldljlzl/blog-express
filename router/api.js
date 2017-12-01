@@ -9,7 +9,7 @@ router.post('/register',function(req,res,next){
     User.findOne({account:account},function(err,res){
         if(err){
             console.log("error: "+err)
-            _res.send('查找是否是已注册账号失败')
+            _res.send({status:0,msg:'查找是否是已注册账号失败'})
             return
         }
         else{
@@ -21,12 +21,12 @@ router.post('/register',function(req,res,next){
                 user.save(function(err,res){
                     if(err){
                         console.log('存入数据失败')
-                        _res.send('存入数据失败')
+                        _res.send({status:1,msg:'存入数据失败'})
                         return
                     }
                     else{
                         console.log('存入数据成功')
-                        _res.send('存入数据成功')
+                        _res.send({status:2,msg:'存入数据成功'})
                         return
                     }
                 })
@@ -34,7 +34,7 @@ router.post('/register',function(req,res,next){
             else{
                 console.log('已经存在该账号')     
                 console.log("res: "+res)
-                _res.send('已经存在该账号')    
+                _res.send({status:3,msg:'已经存在该账号'})    
                 return 
             }
         }

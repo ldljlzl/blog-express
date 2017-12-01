@@ -58,26 +58,21 @@ span.author a{
 div.right{
     background-color: white;
     margin-bottom: 5%;
-}
-
-/*登录框*/
-
-div.signin{
     display: flex;
     justify-content: center;
     padding-bottom: 10%;
 }
-div.signin>div{
+div.right>div{
     width: 80%;
 }
-div.signin div.page-header{
+div.right div.page-header{
     padding: 0
 }
 div.page-header>div{
     width: 30%;
     border-bottom: 2px #e3e300 solid
 }
-div.signin div.input-group{
+div.right div.input-group{
     margin-top: 4%;
 }
 div.button{
@@ -87,16 +82,15 @@ div.button{
     justify-content: flex-end ;
     margin-top: 2%;
 }
-button.signin{
+div.button button{
     background-color: #e3e300;
     width: 83%;
-    /*height: 15%;*/
     margin-top: 2%
 }
-
-div.toRegister{
+div.toRegister,div.toSignin{
     width: 100%;
     margin-top: 2%;
     display: flex;
     justify-content: flex-end 
 }
+

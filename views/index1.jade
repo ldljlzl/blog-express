@@ -39,22 +39,53 @@ html
                             div(class='bodyArticle')=article[i].content
 
                 div.rightPanel
-                    div(class='right signin')
-                        div
+                    -if(!username)
+                        div(class='right signin')
+                            div
+                                div.page-header
+                                    div
+                                        h3 登录
+                                div(class='input-group account')
+                                    span(class="input-group-addon" id="basic-addon1") 账号
+                                    input(type="text" class="form-control signin" placeholder="账号" aria-describedby="basic-addon1")
+                                div(class='input-group password')
+                                    span(class="input-group-addon" id="basic-addon1") 密码
+                                    input(type="password" class="form-control signin" aria-describedby="basic-addon1")
+                                div.button
+                                    button.signin 登录
+                                div.toRegister
+                                    | 还没注册?
+                                    a 马上注册
+                    -else
+                        div(class='right userInfoShow')
+                            div
+                                div.page-header
+                                    div
+                                        h3 用户信息
+                                div.userInfo
+                                    span=username 
+                                    |你好，欢迎来到我的博客
+                                div.logout
+                                    a 退出登录
+                    div(class='right register')   
+                        div     
                             div.page-header
                                 div
-                                    h3 登录
-                            div(class='input-group account')
+                                    h3 注册
+                            div(class='input-group')
                                 span(class="input-group-addon" id="basic-addon1") 账号
-                                input(type="text" class="form-control" placeholder="账号" aria-describedby="basic-addon1")
-                            div(class='input-group password')
+                                input(type="text" class="form-control register account" placeholder="账号" aria-describedby="basic-addon1")
+                            div(class='input-group')
                                 span(class="input-group-addon" id="basic-addon1") 密码
-                                input(type="text" class="form-control" placeholder="密码" aria-describedby="basic-addon1")
+                                input(type="password" class="form-control register password"  aria-describedby="basic-addon1")
+                            div(class='input-group ')
+                                span(class="input-group-addon" id="basic-addon1") 确认密码
+                                input(type="password" class="form-control register passwordAgain" aria-describedby="basic-addon1")
                             div.button
-                                button.signin 登录
-                            div.toRegister
-                                | 还没注册?
-                                a 马上注册
+                                button.register 注册
+                            div.toSignin
+                                | 已经注册?
+                                a 马上登录                       
                     div.right llalalala
         script(type="text/javascript",src="/public/js/index1.js")
         
