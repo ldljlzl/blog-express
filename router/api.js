@@ -47,13 +47,24 @@ router.post('/signin',function(req,res,next){
     User.findOne({account:account,password:password},function(err,res){
         if(err){
             console.log("error: "+err)
-            _res.send('用户名或密码错误')
+            _res.send({status:0,msg:'查找数据库失败'})
             return
         }
         else{
-            _res.cookie('userinfo',{username:account},{expires:new Date(Date.now()+60*60*24*7)})
-            _res.send({msg:'登录成功',username:account})
-            return
+            if(res){
+                if(!res.isAdmin){  
+                    _res.cookie('userinfo',{username:account,isAdmin:false},{expires:new Date(Date.now()+60*60*24*7)})        
+                    _res.send({status:1,msg:'登录成功'})
+                    return
+                }else{
+                    _res.cookie('userinfo',{username:account,isAdmin:true},{expires:new Date(Date.now()+60*60*24*7)})
+                    _res.send({status:2,msg:'管理员登录成功'})
+                    return
+                }   
+            }else{
+               _res.send({status:3,msg:'账号或密码错误'})
+                return 
+            }                          
         }
     })
 })

@@ -34,6 +34,7 @@ router.get('/', function(req, res,next) {
                         console.log('有userinfo')
                         _res.render('index1',{
                             username:_req.cookies.userinfo.username,
+                            isAdmin:_req.cookies.userinfo.isAdmin,
                             article:article,
                             category:myCategory
                         })

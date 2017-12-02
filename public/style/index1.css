@@ -9,14 +9,32 @@ body>div{
 /*导航栏*/
 div.head{
     height: 56px;
-    /*background-color: red;*/
+    background-color: white;
     display: flex;
     justify-content: center;
 }
-div.navigation{
+div.head>div{
     height: 100%;
     width: 40%;
     /*background-color: yellow;*/
+    display: flex;
+    justify-content: space-between
+}
+div.category{
+    color: blue;
+    width: 101%;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+div.category:hover{
+    cursor: pointer;
+    border-bottom: 2px #e67e22 solid;  
+}
+div.category a{
+    text-decoration:none;
 }
 
 /*body主体*/
@@ -25,16 +43,18 @@ div.body{
     justify-content: space-between
 }
 div.leftPanel{
-    width: 50%;
-    margin: 5%;
+    width: 40%;
+    margin-top: 5%;
+    margin-left: 20%;
     margin-top: 2%;  
     display: flex;
     flex-direction: column;
 }
 div.rightPanel{
-    width: 30%;
+    width: 20%;
     height: 300px;
     margin: 5%;
+    margin-right: 15%;
     margin-top: 2%;
 }
 
@@ -69,8 +89,8 @@ div.right div.page-header{
     padding: 0
 }
 div.page-header>div{
-    width: 30%;
-    border-bottom: 2px #e3e300 solid
+    width: 40%;
+    border-bottom: 2px #e67e22 solid
 }
 div.right div.input-group{
     margin-top: 4%;
@@ -83,7 +103,7 @@ div.button{
     margin-top: 2%;
 }
 div.button button{
-    background-color: #e3e300;
+    background-color: #e67e22;
     width: 83%;
     margin-top: 2%
 }
@@ -94,3 +114,16 @@ div.toRegister,div.toSignin{
     justify-content: flex-end 
 }
 
+/*登录界面*/
+div.userInfo span{
+    color: blue
+}
+/*div.logout{
+    margin-left: 85%
+}*/
+div.logout{
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 5%
+}
+                                    

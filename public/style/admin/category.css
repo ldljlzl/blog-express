@@ -9,3 +9,8 @@ input.addCategory{
 button.addCategory{
     margin-top: 1%
 }
+div.back{
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 5%
+}

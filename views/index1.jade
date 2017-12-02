@@ -16,15 +16,14 @@ html
                 //- img(src='/public/img/桃谷绘里香3.jpg' alt='桃谷绘里香3')
                 //- img(src='/public/img/桃谷绘里香4.jpg' alt='桃谷绘里香4')
             div(class='head')
-                div(class='navigation')
-                    ul(class='nav nav-tabs nav-justified')
-                        li(role="presentation" class='active') 
-                            a 首页
-                        - let category=[{nameCategory:'javascript'},{nameCategory:'vue'},{nameCategory:'nodejs'}]
-                        -let article=[{title:'第一篇文字',author:'lzl123',date: new Date(),content:'lalalal'},{title:'第2篇文字',author:'lzl123',date: new Date(),content:'lalalal'},{title:'第3篇文字',author:'lzl123',date: new Date(),content:'lalalal'}]
-                        - for(let i=0;i<category.length;i++)    
-                            li(role="presentation") 
-                                a=category[i].nameCategory
+                div
+                    div.category
+                        a 首页
+                    - let category=[{nameCategory:'javascript'},{nameCategory:'vue'},{nameCategory:'nodejs'}]
+                    -let article=[{title:'第一篇文字',author:'lzl123',date: new Date(),content:'lalalal'},{title:'第2篇文字',author:'lzl123',date: new Date(),content:'lalalal'},{title:'第3篇文字',author:'lzl123',date: new Date(),content:'lalalal'}]
+                    - for(let i=0;i<category.length;i++)    
+                        div.category
+                            a=category[i].nameCategory
             div.body
                 div.leftPanel
                     -for(let i=0;i<article.length;i++)  
@@ -64,9 +63,11 @@ html
                                         h3 用户信息
                                 div.userInfo
                                     span=username 
-                                    |你好，欢迎来到我的博客
+                                    p 你好，欢迎来到我的博客
+                                    -if(isAdmin)
+                                        a(href='/admin') 进入后台管理界面 
                                 div.logout
-                                    a 退出登录
+                                    button 退出登录
                     div(class='right register')   
                         div     
                             div.page-header
