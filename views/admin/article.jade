@@ -85,6 +85,13 @@ html
 
                     div(class="form-group")
                         label 内容
-                        textarea(rows="10" class="form-control contentArticle" placeholder='内容') 
+                        div(class='effect')
+                            div.textEffect
+                                div(title='标题' class='pointer beTitle') H
+                                div(title='加粗' class='pointer beBold' ) B
+                            div.addPic
+                                img(src='/public/img/图片.png' title='上传图片' alt='上传图片' class='pic ')
+                        div(contenteditable="true" class='articleDiv')
+                        //- textarea(rows="10" class="form-control contentArticle" placeholder='内容') 
                     button(type='submit' class='btn btn-info addArticle') 提交文章
         script(type="text/javascript",src="/public/js/admin/article.js")

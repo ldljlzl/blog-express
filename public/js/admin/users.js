@@ -32,19 +32,17 @@ $(function(){
         let account=$(this).parent().siblings('td.account').children('input').val()
         let password=$(this).parent().siblings('td.password').children('input').val()
         let isAdmin=$(this).parent().siblings('td.isAdmin ').children('div.isAdminText').text()
-        if(oldAccount===account){
+       
+        $.post('/admin/users/save',{
+            oldAccount:oldAccount,
+            account:account,
+            password:password,
+            isAdmin:isAdmin
+        },function(data){
+            alert(data)
             location.reload()
-        }else{
-            $.post('/admin/users/save',{
-                oldAccount:oldAccount,
-                account:account,
-                password:password,
-                isAdmin:isAdmin
-            },function(data){
-                alert(data)
-                location.reload()
-            })
-        }
+        })
+
         
     })
 

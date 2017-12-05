@@ -104,7 +104,7 @@ router.post('/save',function(req,res){
         }
         else
         {
-            if(!res){
+            if((!res)||(oldAccount===account)){
                 User.update({'account':oldAccount},{'account':account,'password':password,'isAdmin':isAdmin},function(err,res){
                     if(err){
                         console.log('err:'+err)
@@ -117,6 +117,7 @@ router.post('/save',function(req,res){
                 return
             }
             else{
+                console.log(res)
                 _res.send('此账号已存在')
                 return
             }

@@ -18,7 +18,7 @@ div.back a{
 img{
     height: 16px;   
 }
-img:hover{
+.pointer,img{
     cursor:pointer
 }
 
@@ -33,10 +33,39 @@ div.page-header{
 div.form-group input{
     width: 25%
 }
-div.panel textarea{
-    width: 70%
-}
 
+/*添加新文章*/
+div.articleDiv{
+    border: 1px solid #31b0d5;
+    width: 70%;
+    height: 500px;
+    font-size: 20px;
+}
+div.effect{
+    border-top: 1px solid #e8e8e8;
+    width: 50%;
+}
+div.effect>div{
+    display: inline-block;
+    margin-bottom: 0.5%;
+    padding-left: 0.5%;
+}
+div.textEffect{
+    font-weight: bold;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    border-right: 1px solid #e8e8e8;
+}
+div.textEffect>div{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+}
+div.addPic{
+    width: 20px;
+    height: 20px;
+    margin-left: 1%;
+}
 
 
 

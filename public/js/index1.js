@@ -17,7 +17,7 @@ $(function(){
     })
 
     //退出登录
-    $("div.logout a").click(function(){
+    $("div.logout button").click(function(){
         $.get('/api/clearCookies',function(msg){
             alert(msg)
             location.reload()
