@@ -81,6 +81,10 @@ html
         div(class='panel panel-default addUser')  
             div.panel-heading 添加用户
             div.panel-body
+                div(id="wysiwyg" style="height: 100px;width: 300px;border:1px solid black" contenteditable) 测试内容
+                div(data-name="bold" id='bold') 
+                    a 加粗  
+                button(data-name="copy" id='copy') 复制
                 div(class='input-group')  
                     span.input-group-addon  账号 
                     input(type="text" class="form-control account" placeholder="Username" aria-describedby="basic-addon1" ) 
@@ -104,4 +108,5 @@ html
                                 a(class='dropMenu') true
                 div
                     button(class="addUserBtn btn btn-info") 添加用户   
+                
         script(type="text/javascript",src="/public/js/admin/users.js")

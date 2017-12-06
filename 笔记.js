@@ -99,3 +99,7 @@ https://www.zhihu.com/question/31442029
     })
     console.log(myCategory) // undefined
     //因为js是异步的，数据库的值还没有传给myCategory
+
+13._res.cookie('userinfo',{username:account,isAdmin:true},{expires:new Date(Date.now()+60*60*24*1000)})
+                    
+60*60*24*1000单位为ms

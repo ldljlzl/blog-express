@@ -21,13 +21,10 @@ app.use('/api',require('./router/api'))
 
 app.use('/admin',function(req,res,next){
     console.log(req.cookies)
-    console.log('111111111111111')
     if(!req.cookies.hasOwnProperty('userinfo')){
-        console.log('222222222222221')
         res.send('您还没登陆，不能进入管理员页面')
         next()
     }else if(!req.cookies.userinfo.isAdmin){
-        console.log('33333333333333')
         res.send('您不是管理员，不能进入管理员页面')
         next()
     }else{
@@ -52,6 +49,5 @@ mongoose.connect('mongodb://localhost:28017/blog',function(err){
 
 
 
-// app.use('/',indexRouter)
-// app.use('/user',userRouter)
+
 app.listen(3000)

@@ -53,11 +53,11 @@ router.post('/signin',function(req,res,next){
         else{
             if(res){
                 if(!res.isAdmin){  
-                    _res.cookie('userinfo',{username:account,isAdmin:false},{expires:new Date(Date.now()+60*60*24*7)})        
+                    _res.cookie('userinfo',{username:account,isAdmin:false},{expires:new Date(Date.now()+60*60*24*1000)})        
                     _res.send({status:1,msg:'登录成功'})
                     return
                 }else{
-                    _res.cookie('userinfo',{username:account,isAdmin:true},{expires:new Date(Date.now()+60*60*24*7)})
+                    _res.cookie('userinfo',{username:account,isAdmin:true},{expires:new Date(Date.now()+60*60*24*1000)})
                     _res.send({status:2,msg:'管理员登录成功'})
                     return
                 }   

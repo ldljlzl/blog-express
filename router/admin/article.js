@@ -17,28 +17,29 @@ router.get('/',function(req,res,next){
             return
         }else{
             category=res
-        }
-    })
-    Article.find(function(err,res){
-        if(err){
-            console.log('文章查找数据库失败')
-            _res.send('文章查找数据库失败')
-            return
-        }
-        else{
-            if(!req.query.page)
-            {
-                req.query.page=1
-            }
-            _res.render('admin/article',{
-                articles:res,
-                page_index:req.query.page,
-                category:category
+            Article.find(function(err,res){
+                if(err){
+                    console.log('文章查找数据库失败')
+                    _res.send('文章查找数据库失败')
+                    return
+                }
+                else{
+                    if(!req.query.page)
+                    {
+                        req.query.page=1
+                    }
+                    _res.render('admin/article',{
+                        articles:res,
+                        page_index:req.query.page,
+                        category:category
+                    })
+                    return
+                }
+                
             })
-            return
         }
-        
     })
+
 })
 
 router.post('/addArticle',function(req,res){

@@ -17,11 +17,9 @@ $(function(){
     })
 
     $('button#bold').click(function(){
-        document.execCommand($(this).attr('data-name'),false)
+        document.execCommand($(this).attr('data-name'))
     })
-    $("div.beBold").click(function(){
-        alert(typeof $(this).attr('name'))
-        document.execCommand($(this).attr('name'), false)
+
         
         // alert(document.selection.createRange())
 
@@ -55,9 +53,5 @@ $(function(){
                 location.reload()
             }
         })
-    })
-
-    
-
-    
+    })  
 })
