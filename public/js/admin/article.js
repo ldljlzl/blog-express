@@ -16,9 +16,13 @@ $(function(){
         $("div.btn-group button.category").text(category)
     })
 
-    $("div.beTitle").click(function(){
-        let lzl=document.execCommand("delete", false)
-        alert(lzl)
+    $('button#bold').click(function(){
+        document.execCommand($(this).attr('data-name'),false)
+    })
+    $("div.beBold").click(function(){
+        alert(typeof $(this).attr('name'))
+        document.execCommand($(this).attr('name'), false)
+        
         // alert(document.selection.createRange())
 
         // if($(this).hasClass("active")){

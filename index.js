@@ -18,10 +18,28 @@ app.use(cookieParser())
 
 app.use('/',require('./router/index'))
 app.use('/api',require('./router/api'))
+
+app.use('/admin',function(req,res,next){
+    console.log(req.cookies)
+    console.log('111111111111111')
+    if(!req.cookies.hasOwnProperty('userinfo')){
+        console.log('222222222222221')
+        res.send('您还没登陆，不能进入管理员页面')
+        next()
+    }else if(!req.cookies.userinfo.isAdmin){
+        console.log('33333333333333')
+        res.send('您不是管理员，不能进入管理员页面')
+        next()
+    }else{
+        next()
+    }
+})
 app.use('/admin',require('./router/admin'))
 app.use('/admin/users',require('./router/admin/users'))
 app.use('/admin/article',require('./router/admin/article'))
 app.use('/admin/category',require('./router/admin/category'))
+
+
 
 mongoose.connect('mongodb://localhost:28017/blog',function(err){
     if(err){
