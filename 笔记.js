@@ -103,3 +103,7 @@ https://www.zhihu.com/question/31442029
 13._res.cookie('userinfo',{username:account,isAdmin:true},{expires:new Date(Date.now()+60*60*24*1000)})
                     
 60*60*24*1000单位为ms
+
+14.非IE浏览器 ，button点击后自动刷新问题
+//button标签按钮会提交表单（会有刷新操作），而input标签type属性为button不会
+//button(type="button")加上属性解决此问题

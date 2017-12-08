@@ -91,9 +91,10 @@ html
                                 div(title='加粗' class='pointer beBold' name='bold') B
                             div.addPic
                                 img(src='/public/img/图片.png' title='上传图片' alt='上传图片' class='pic ')
-                        div(contenteditable class='articleDiv')
-                        button(data-name="bold" id='bold') 加粗  
-                        button(data-name="copy" id='copy') 复制
+                        div(contenteditable="true" class='articleDiv')
+                        button(type="button" data-name="bold" id='bold') 加粗  
+                        button(type="button" data-name="copy" id='copy') 复制
+                        button(type="button" id='getHTML') 获取html
                         div(id="wysiwyg" style="height: 100px;width: 300px;border:1px solid black" contenteditable) 测试内容
                     button(type='submit' class='btn btn-info addArticle') 提交文章
         script(type="text/javascript",src="/public/js/admin/article.js")

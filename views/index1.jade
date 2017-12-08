@@ -19,8 +19,6 @@ html
                 div
                     div.category
                         a 首页
-                    - let category=[{nameCategory:'javascript'},{nameCategory:'vue'},{nameCategory:'nodejs'}]
-                    -let article=[{title:'第一篇文字',author:'lzl123',date: new Date(),content:'lalalal'},{title:'第2篇文字',author:'lzl123',date: new Date(),content:'lalalal'},{title:'第3篇文字',author:'lzl123',date: new Date(),content:'lalalal'}]
                     - for(let i=0;i<category.length;i++)    
                         div.category
                             a=category[i].nameCategory

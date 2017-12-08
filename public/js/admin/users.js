@@ -1,10 +1,5 @@
 $(function(){
-    $('div#bold a').click(function(){
-        document.execCommand($(this).attr('data-name'))
-    })
-    $('button#copy').click(function(){
-        document.execCommand($(this).attr('data-name'))
-    })
+
     let oldAccount
     $("td.textEdit").hide()
 

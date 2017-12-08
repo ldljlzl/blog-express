@@ -19,8 +19,12 @@ $(function(){
     $('button#bold').click(function(){
         document.execCommand($(this).attr('data-name'))
     })
-
-        
+    $('button#copy').click(function(){
+        document.execCommand($(this).attr('data-name'))
+    })
+    $('button#getHTML').click(function(){
+        alert($('div.articleDiv').html())
+    })   
         // alert(document.selection.createRange())
 
         // if($(this).hasClass("active")){
@@ -33,7 +37,7 @@ $(function(){
         //     $("div.articleDiv").css("font-size","40px")
         // }
         
-    })
+   
 
 
     //添加文章

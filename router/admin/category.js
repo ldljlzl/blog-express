@@ -50,7 +50,6 @@ router.post('/addCategory',function(req,res){
                     }
                 })
             }
-            console.log('到了这个return  1111111111111111111')
             return
         }
     })
