@@ -58,4 +58,41 @@ $(function(){
             }
         })
     })  
+
+
+
+  
+    
 })
+function showPreview(source) {
+    let file = source.files[0]
+    let reader = new FileReader()
+    reader.onload = function (evt) {
+        $('img#test').attr('src', evt.target.result)
+        alert(evt.target.result)
+    }
+    reader.readAsDataURL(file)
+}
+function insertHTML(){
+    let html = '<img src="/public/img/add.png"/>'
+    sel = window.getSelection();
+    if (sel.getRangeAt && sel.rangeCount) {
+        range = sel.getRangeAt(0);
+        range.deleteContents();
+        var el = document.createElement('div');
+        el.innerHTML = html;
+        var frag = document.createDocumentFragment(), node, lastNode;
+        while ((node = el.firstChild)) {
+            lastNode = frag.appendChild(node);
+        }
+
+        range.insertNode(frag);
+        if (lastNode) {
+            range = range.cloneRange();
+            range.setStartAfter(lastNode);
+            range.collapse(true);
+            sel.removeAllRanges();
+            sel.addRange(range);
+        }
+    } 
+}

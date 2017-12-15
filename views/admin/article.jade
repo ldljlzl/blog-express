@@ -96,5 +96,8 @@ html
                         button(type="button" data-name="copy" id='copy') 复制
                         button(type="button" id='getHTML') 获取html
                         div(id="wysiwyg" style="height: 100px;width: 300px;border:1px solid black" contenteditable) 测试内容
+                        input(type='file' id='fileSelect' onchange="showPreview(this)") 
+                        img#test(src='')
+                        button(type="button" onchange="insertHTML()") charu
                     button(type='submit' class='btn btn-info addArticle') 提交文章
         script(type="text/javascript",src="/public/js/admin/article.js")
