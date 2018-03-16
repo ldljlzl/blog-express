@@ -2,7 +2,7 @@
 
 学习使用express搭建博客
 
-![image](https://github.com/ldljlzl/projectPic/blog/初始界面.png)
+![image](https://github.com/ldljlzl/projectPic/blog/lzl.png)
 
 
 ![image](https://github.com/ldljlzl/projectPic/blog/初始界面.png)
