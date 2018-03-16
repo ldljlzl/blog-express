@@ -5,7 +5,7 @@
 ![image](https://github.com/ldljlzl/projectPic/blog/初始界面.png)
 
 
-![image](projectPic/blog/初始界面.png)
+![image](https://github.com/ldljlzl/projectPic/blog/初始界面.png)
 ![image](https://github.com/ldljlzl/projectPic/blog/后台管理界面（分类管理）.png)
 ![image](https://github.com/ldljlzl/projectPic/blog/后台管理界面（文章管理）.png)
 ![image](https://github.com/ldljlzl/projectPic/blog/后台管理界面（添加文章）.png)
