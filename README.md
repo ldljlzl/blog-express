@@ -4,7 +4,6 @@
 
 <br>  
 博客初始界面（随便排的版，有点丑陋） 
-<br>  
 ![image](https://github.com/ldljlzl/projectPic/blob/master/blog/lzl.png)
 
 
