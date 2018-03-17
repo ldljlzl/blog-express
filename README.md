@@ -2,8 +2,8 @@
 
 学习使用express搭建简单博客,熟悉ajax和对mongodb的增查删改
 
-\<br>  
-博客初始界面（随便排的版，有点丑陋）
+<br>  
+博客初始界面（随便排的版，有点丑陋）<br>  \<br>  
 \<br>  
 ![image](https://github.com/ldljlzl/projectPic/blob/master/blog/lzl.png)
 
